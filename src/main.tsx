@@ -3,6 +3,8 @@ import Provider from "./providers/provider";
 import './index.css';
 import { AppRouter } from "./router";
 
+
+
 const root = document.getElementById("root");
 
 if (root) {

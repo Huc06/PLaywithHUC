@@ -17,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        bangers: ["Bangers", "serif"],
       },
     },
   },

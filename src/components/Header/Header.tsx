@@ -3,28 +3,17 @@ import {  ShoppingBag } from 'lucide-react';
 import { Button } from '../ui/button';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Search } from './Search';
+import merry from '../../assets/merry.svg';
 
 export function Header() {
   return (
     <nav className="bg-background px-16 py-3 flex items-center justify-between ">
       <div className="flex items-center space-x-8">
-        <Link to="/" className="text-2xl font-bold text-text-primary">
+        <Link to="/" className="text-2xl font-bold text-text-primary flex items-center space-x-2">
           G3-Connect
+        <img src={merry} alt="Merry" className="h-10 w-10" />
+
         </Link>
-        {/* <div className="hidden md:flex space-x-6">
-          <Link to="/playlink" className="text-text-primary hover:text-primary">
-            Playlink
-          </Link>
-          <Link to="/epals" className="text-text-primary hover:text-primary">
-            ePals
-          </Link>
-          <Link to="/community" className="text-text-primary hover:text-primary">
-            Community
-          </Link>
-          <Link to="/app" className="text-text-primary hover:text-primary">
-            App
-          </Link>
-        </div> */}
       </div>
       <div className="flex items-center space-x-4">
         <Search/>
