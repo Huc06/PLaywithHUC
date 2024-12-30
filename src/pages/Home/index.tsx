@@ -1,28 +1,21 @@
 import Slider from "@/components/Home/Slider";
-import link from "../../assets/slider/image3.png"
 import AllServices from "@/components/Home/AllServices";
+import ProfileGrid from "@/components/Home/Profile";
+import { CardTopGrid } from "@/components/Home/Card-Top";
 
 const Home = () => {
-    const images = [
-    link,
-    link,
-    link];
+  const link = "src/assets/slider/";
+  const images = [link + "play.png", link + "custom.png", link + "balance.png"];
 
   return (
-    
     <div>
       {/* <ProfileHero/> */}
       <Slider images={images} />
       <AllServices />
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
-      <div>test</div>
-       <div>test</div>
-
+      <ProfileGrid />
+      <CardTopGrid />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
