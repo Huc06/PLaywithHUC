@@ -63,8 +63,9 @@ export function CardTop({
       </div>
 
       {/* Game Logo */}
-      <div className="mt-auto">
+      <div className="mt-auto flex space-x-2 font-bangers text-2xl ">
         <img src={game.logo} alt={game.name} className="h-8 object-contain" />
+        <span>{game.name}</span>
       </div>
     </div>
   );

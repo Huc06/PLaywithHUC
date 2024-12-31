@@ -10,7 +10,7 @@ const profiles = [
     tag: "Shadow Slayer", // Tag mới
     game: {
       name: "Master Duel",
-      logo: "src/assets/Card/DBD.png",
+      logo: "src/assets/Services/game4.png",
     },
   },
   {
@@ -19,7 +19,7 @@ const profiles = [
     tag: "Wave Master", // Tag mới
     game: {
       name: "Onchain Clash",
-      logo: "src/assets/Card/lol.png",
+      logo: "src/assets/Services/game2.png",
     },
   },
   {
@@ -28,7 +28,7 @@ const profiles = [
     tag: "Survival Specialist", // Tag mới
     game: {
       name: "Zone Nine",
-      logo: "src/assets/Card/DBD.png",
+      logo: "src/assets/Services/game1.png",
     },
   },
   {
@@ -37,7 +37,7 @@ const profiles = [
     tag: "Pro player", // Tag mới
     game: {
       name: "Stellar Forger",
-      logo: "src/assets/Card/tft.png",
+      logo: "src/assets/Services/game3.png",
     },
   },
 ];
