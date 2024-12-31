@@ -6,10 +6,11 @@ const link = "src/assets/Services/";
 const photoscarous = [
   link + "friend.png",
   link + "chat.png",
-  link + "lol.png",
-  link + "tft.png",
-  link + "minecraft.png",
-  link + "valorant.png",
+  link + "game1.png",
+  link + "game2.png",
+  link + "game3.png",
+  link + "game4.png",
+  link + "game5.png",
   link + "socials.png",
 ];
 

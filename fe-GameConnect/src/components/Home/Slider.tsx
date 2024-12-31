@@ -13,15 +13,15 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const reloadSlider = (index: number) => {
     setActive(index);
     if (sliderRef.current) {
-      sliderRef.current.style.left = `-${sliderRef.current.children[index].getBoundingClientRect().width * index}px`;
+      sliderRef.current.style.left = `-${
+        sliderRef.current.children[index].getBoundingClientRect().width * index
+      }px`;
     }
   };
 
   const handleNext = () => {
     setActive((prev) => (prev + 1 < images.length ? prev + 1 : 0));
   };
-
-
 
   const resetInterval = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
@@ -38,16 +38,15 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   }, [active]);
 
   return (
-    <div className={styles.slider }>
+    <div className={styles.slider}>
       <div className={styles.list} ref={sliderRef}>
         {images.map((src, index) => (
           <div key={index} className={styles.item}>
             <img src={src} alt={`Slide ${index + 1}`} />
           </div>
         ))}
-        
       </div>
-     
+
       <ul className={styles.dots}>
         {images.map((_, index) => (
           <li

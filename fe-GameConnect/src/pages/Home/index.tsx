@@ -5,7 +5,12 @@ import { CardTopGrid } from "@/components/Home/Card-Top";
 
 const Home = () => {
   const link = "src/assets/slider/";
-  const images = [link + "play.png", link + "custom.png", link + "balance.png"];
+  const images = [
+    link + "play.png",
+    link + "custom.png",
+    link + "balance.png",
+    link + "join.png",
+  ];
 
   return (
     <div>

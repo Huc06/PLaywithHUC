@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import { CardModalProps } from "../../types/Profile";
+import { CardModalProps } from "../../types/profile";
 import { Chat } from "../Chat";
 
 export function CardModal({ profile, isOpen, onClose }: CardModalProps) {

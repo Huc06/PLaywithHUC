@@ -1,4 +1,4 @@
-import { CardTopProps } from "../../types/Profile";
+import { CardTopProps } from "../../types/profile";
 import { PlayCircle } from "lucide-react";
 
 export function CardTop({

@@ -1,42 +1,42 @@
 import { useState } from "react";
 import { CardTop } from "./Card-Top";
 import { CardModal } from "./Modal";
-import { CardTopProps } from "../../types/Profile";
+import { CardTopProps } from "../../types/profile";
 
 const profiles = [
   {
-    username: "Chey",
-    imageUrl: "src/assets/Card/image3.png",
-    tag: "Pro Player",
+    username: "Rikuuen",
+    imageUrl: "src/assets/Card/Rikuuen.png",
+    tag: "Shadow Slayer", // Tag mới
     game: {
-      name: "Dead by Daylight",
+      name: "Master Duel",
       logo: "src/assets/Card/DBD.png",
     },
   },
   {
-    username: "Nami",
+    username: "Lissa",
     imageUrl: "src/assets/Card/image4.png",
-    tag: "#3 Nami",
+    tag: "Wave Master", // Tag mới
     game: {
-      name: "League of Legends",
+      name: "Onchain Clash",
       logo: "src/assets/Card/lol.png",
     },
   },
   {
-    username: "dopameanie",
-    imageUrl: "src/assets/Card/image1.png",
-    tag: "Đại kiện tướng",
+    username: "Squiddu",
+    imageUrl: "src/assets/Card/Squiddu.png",
+    tag: "Survival Specialist", // Tag mới
     game: {
-      name: "Dead by Daylight",
+      name: "Zone Nine",
       logo: "src/assets/Card/DBD.png",
     },
   },
   {
-    username: "Doffy",
-    imageUrl: "src/assets/Card/image2.png",
-    tag: "Đại kiện tướng",
+    username: "Prodev",
+    imageUrl: "src/assets/Card/image1.png",
+    tag: "Pro player", // Tag mới
     game: {
-      name: "Teamfight Tactics",
+      name: "Stellar Forger",
       logo: "src/assets/Card/tft.png",
     },
   },

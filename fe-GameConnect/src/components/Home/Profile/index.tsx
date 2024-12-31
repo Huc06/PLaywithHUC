@@ -6,17 +6,17 @@ const profiles = [
     imageUrl: "src/assets/Card/image4.png",
     badges: ["GAMING SCORES", "NEWS", "E-CHAT"],
     interactions: 9,
-    bio: "Professional gamer and content creator",
+    bio: "Passionate gamer and creative content maker.",
     status: "online" as const,
     lastSeen: new Date(),
     rating: 5.0,
   },
   {
-    username: "Anna",
-    imageUrl: "src/assets/Card/image3.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
-    interactions: 4,
-    bio: "League of Legends enthusiast",
+    username: "Squiddu",
+    imageUrl: "src/assets/Card/Squiddu.png",
+    badges: ["E-CHAT", "NEWS", "Zone Nine"],
+    interactions: 6,
+    bio: "Exploring the world of League of Legends one match at a time.",
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
@@ -24,49 +24,49 @@ const profiles = [
   {
     username: "Thor",
     imageUrl: "src/assets/Card/image2.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
+    badges: ["E-CHAT", "NEWS", "Stellar Forger"],
+    interactions: 9,
+    bio: "Lightning-fast reflexes and a love for epic battles.",
+    status: "online" as const,
+    lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
+    rating: 5.0,
+  },
+  {
+    username: "Rikuuen",
+    imageUrl: "src/assets/Card/Rikuuen.png",
+    badges: ["E-CHAT", "NEWS", "Onchain Clash"],
     interactions: 4,
-    bio: "League of Legends enthusiast",
+    bio: "Gaming enthusiast with a knack for strategy.",
+    status: "online" as const,
+    lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
+    rating: 5.0,
+  },
+  {
+    username: "Johnny",
+    imageUrl: "src/assets/Card/johnny.png",
+    badges: ["E-CHAT", "NEWS", "Omnizone"],
+    interactions: 5,
+    bio: "Dedicated to climbing the ranks in the gaming world.",
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
   },
   {
-    username: "Man",
-    imageUrl: "src/assets/Card/image5.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
-    interactions: 4,
-    bio: "League of Legends enthusiast",
-    status: "offline" as const,
-    lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
-    rating: 5.0,
-  },
-  {
-    username: "Pengu",
-    imageUrl: "src/assets/Card/image1.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
-    interactions: 4,
-    bio: "League of Legends enthusiast",
-    status: "offline" as const,
-    lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
-    rating: 5.0,
-  },
-  {
-    username: "Jack",
+    username: "CatLord",
     imageUrl: "src/assets/Card/image6.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
-    interactions: 4,
-    bio: "League of Legends enthusiast",
-    status: "offline" as const,
+    badges: ["E-CHAT", "MasterDuel", "Omnizone"],
+    interactions: 3,
+    bio: "Master strategist with a love for cats and cards.",
+    status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
   },
   {
     username: "Sparrow",
     imageUrl: "src/assets/Card/image7.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
+    badges: ["E-CHAT", "NEWS", "Omnizone"],
     interactions: 4,
-    bio: "League of Legends enthusiast",
+    bio: "Soaring through gaming adventures with style.",
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
@@ -74,14 +74,13 @@ const profiles = [
   {
     username: "Prodev",
     imageUrl: "src/assets/Card/image1.png",
-    badges: ["E-CHAT", "NEWS", "LEAGUE LEGENDS"],
+    badges: ["E-CHAT", "Stellar Forger", "Zone Nine"],
     interactions: 4,
-    bio: "League of Legends enthusiast",
+    bio: "Tech enthusiast by day, gaming legend by night.",
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
   },
-  // Add more profiles as needed
 ];
 
 export default function ProfileGrid() {

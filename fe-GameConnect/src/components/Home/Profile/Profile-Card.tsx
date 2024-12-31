@@ -1,7 +1,7 @@
 import { Star, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Profile } from "../../types/Profile";
+import { Profile } from "../../types/profile";
 
 import {
   Dialog,
@@ -12,13 +12,13 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Chat } from "../Chat";
-import { ProfileDetails } from "./profile-details";
+import { ProfileDetails } from "./Profile-Details";
 
 export default function ProfileCard(props: Profile) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="relative w-auto max-w-sm overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900">
+        <Card className="relative w-auto max-w-sm overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900 border-none">
           <div className="relative aspect-square">
             <img
               src={props.imageUrl}

@@ -1,29 +1,59 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Search } from "./Search";
 import merry from "../../assets/merry.svg";
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-background px-16 py-3 flex items-center justify-between ">
-      <div className="flex items-center space-x-8">
-        <Link
-          to="/"
-          className="text-3xl font-bold text-text-primary flex items-center space-x-2 font-bangers"
-        >
-          G3-Connect
-          <img src={merry} alt="Merry" className="h-10 w-10" />
-        </Link>
+    <nav className="bg-background px-4 sm:px-6 lg:px-16 py-3">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <Link
+            to="/"
+            className="text-2xl sm:text-3xl font-bold flex items-center space-x-2 font-bangers"
+          >
+            <span>G3-Connect</span>
+            <img src={merry} alt="Merry" className="h-10 w-10" />
+          </Link>
+        </div>
+        <div className="hidden md:flex items-center space-x-4">
+          <Search />
+          <Button variant="ghost" size="icon">
+            <ShoppingBag className="h-5 w-5" />
+          </Button>
+          <ConnectButton />
+        </div>
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+        </div>
       </div>
-      <div className="flex items-center space-x-4">
-        <Search />
-        <Button variant="ghost" size="icon">
-          <ShoppingBag className="h-5 w-5 text-text-primary" />
-        </Button>
-        <ConnectButton />
-      </div>
+      {isMenuOpen && (
+        <div className="md:hidden mt-4 space-y-4 flex flex-row">
+          <Search />
+          <div className="flex float-end justify-end ml-auto ">
+            <Button variant="ghost" size="icon">
+              <ShoppingBag className="h-5 w-5" />
+            </Button>
+            <ConnectButton />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
