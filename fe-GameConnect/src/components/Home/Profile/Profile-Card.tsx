@@ -1,4 +1,4 @@
-import { Star, Play } from "lucide-react";
+import { Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Profile } from "../../types/profile";
@@ -25,10 +25,9 @@ export default function ProfileCard(props: Profile) {
               alt={`${props.username}'s profile`}
               className="h-full w-full object-cover bg-fixed"
             />
-            <div className="absolute inset-0">
-              <button className="absolute left-[85%] top-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 p-4 backdrop-blur-sm transition-transform hover:scale-110">
-                <Play className="h-6 w-6 text-white" fill="white" />
-              </button>
+            <div className="flex items-center justify-between p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white">
+              <span className="font-bold text-lg">Hourly Rate:</span>
+              <span className="text-xl">{props.hourlyRate} A8</span>
             </div>
           </div>
 
@@ -38,7 +37,6 @@ export default function ProfileCard(props: Profile) {
               <div className="flex items-center gap-2">
                 <span className="text-lg font-semibold text-pink">
                   {props.username}
-                  Hourly Rate: {props.hourlyRate} A8
                 </span>
                 <span role="img" aria-label="verified">
                   👑

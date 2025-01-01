@@ -109,7 +109,6 @@ export default function ProfileGrid() {
         bio: newProfile.bio || "No bio available",
         status: newProfile.status || "offline",
         lastSeen: newProfile.lastSeen || new Date(),
-        hourlyRate: newProfile.hourlyRate,
       },
     ]);
   };
