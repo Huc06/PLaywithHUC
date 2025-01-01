@@ -13,13 +13,16 @@ export function Header() {
   return (
     <nav className="bg-background px-4 sm:px-6 lg:px-16 py-3">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6  font-bangers">
           <Link
             to="/"
-            className="text-2xl sm:text-3xl font-bold flex items-center space-x-2 font-bangers"
+            className="text-2xl sm:text-3xl font-bold flex items-center space-x-2"
           >
             <span>PlaywithHUc</span>
             <img src={merry} alt="Merry" className="h-10 w-10" />
+          </Link>
+          <Link to="/communication" className="text-xl font-bold">
+            <span>Communication</span>
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4">

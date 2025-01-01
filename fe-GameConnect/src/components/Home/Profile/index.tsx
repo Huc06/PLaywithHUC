@@ -1,9 +1,11 @@
 import React from 'react';
 import ProfileCard from "./Profile-Card";
-import AddCommentComponent from './AddCommentComponent';
-import CreateProfileComponent from './CreateProfileComponent';
-
-const profiles = [
+import { Button } from "@/components/ui/button";
+import ProfileForm from "./Profile-form";
+import { useState } from "react";
+import { Profile } from "../../types/profile";
+import Modal from "./Modal";
+const initialProfiles = [
   {
     username: "Lissa",
     imageUrl: "src/assets/Card/image4.png",
@@ -87,13 +89,35 @@ const profiles = [
 ];
 
 export default function ProfileGrid() {
+  const [profiles, setProfiles] = useState(initialProfiles);
+  const [showForm, setShowForm] = useState(false);
+
+  const handleCreateProfile = (newProfile: Profile) => {
+    setProfiles([
+      ...profiles,
+      {
+        ...newProfile,
+        bio: newProfile.bio || "No bio available",
+        status: newProfile.status || "offline",
+        lastSeen: newProfile.lastSeen || new Date(),
+      },
+    ]);
+    setShowForm(false);
+  };
+
   return (
     <section className="pt-[3rem] pb-[2rem]">
-      <div className="relative lg:mx-auto max-w-5xl mx-[1rem] ">
-        <div className="text-[2rem] font-bold flex  left-[10%] mb-[1rem] text-center font-bangers">
-          ProFile
+      <div className="relative lg:mx-auto max-w-5xl mx-[1rem]">
+        <div className="flex justify-between items-center mb-[1rem]">
+          <h1 className="text-[2rem] font-bold font-bangers">ProFile</h1>
+          <Button onClick={() => setShowForm(true)}>Create Profile</Button>
         </div>
-        <CreateProfileComponent />
+        <Modal isOpen={showForm} onClose={() => setShowForm(false)}>
+          <ProfileForm
+            onSubmit={handleCreateProfile}
+            onCancel={() => setShowForm(false)}
+          />
+        </Modal>
         <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
           {profiles.map((profile) => (
             <ProfileCard key={profile.username} {...profile} />
