@@ -1,10 +1,12 @@
-import React from 'react';
+
 import ProfileCard from "./Profile-Card";
 import { Button } from "@/components/ui/button";
 import ProfileForm from "./Profile-form";
 import { useState } from "react";
 import { Profile } from "../../types/profile";
 import Modal from "./Modal";
+import AddCommentComponent from './AddCommentComponent';
+
 const initialProfiles = [
   {
     username: "Lissa",
@@ -102,7 +104,6 @@ export default function ProfileGrid() {
         lastSeen: newProfile.lastSeen || new Date(),
       },
     ]);
-    setShowForm(false);
   };
 
   return (

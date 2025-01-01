@@ -38,4 +38,5 @@ export interface Profile {
   status?: "online" | "offline";
   lastSeen?: Date;
   messages?: Message[];
+  hourlyRate: string;
 }

@@ -38,6 +38,7 @@ export default function ProfileCard(props: Profile) {
               <div className="flex items-center gap-2">
                 <span className="text-lg font-semibold text-white">
                   {props.username}
+                  Hourly Rate: A8{props.hourlyRate}
                 </span>
                 <span role="img" aria-label="verified">
                   👑
