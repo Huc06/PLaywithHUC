@@ -1,4 +1,7 @@
+import React from 'react';
 import ProfileCard from "./Profile-Card";
+import AddCommentComponent from './AddCommentComponent';
+import CreateProfileComponent from './CreateProfileComponent';
 
 const profiles = [
   {
@@ -90,11 +93,13 @@ export default function ProfileGrid() {
         <div className="text-[2rem] font-bold flex  left-[10%] mb-[1rem] text-center font-bangers">
           ProFile
         </div>
+        <CreateProfileComponent />
         <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
           {profiles.map((profile) => (
             <ProfileCard key={profile.username} {...profile} />
           ))}
         </div>
+        <AddCommentComponent/>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export function Header() {
             to="/"
             className="text-2xl sm:text-3xl font-bold flex items-center space-x-2 font-bangers"
           >
-            <span>G3-Connect</span>
+            <span>PlaywithHUc</span>
             <img src={merry} alt="Merry" className="h-10 w-10" />
           </Link>
         </div>
