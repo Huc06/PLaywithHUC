@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star } from "lucide-react";
-import type { Profile } from "../../types/Profile";
+import type { Profile } from "../../types/profile";
 
 interface ProfileDetailsProps {
   profile: Profile;
