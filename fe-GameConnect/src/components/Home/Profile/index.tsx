@@ -1,4 +1,3 @@
-
 import ProfileCard from "./Profile-Card";
 import { Button } from "@/components/ui/button";
 import ProfileForm from "./Profile-form";
@@ -17,6 +16,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(),
     rating: 5.0,
+    hourlyRate: "20",
   },
   {
     username: "Squiddu",
@@ -27,6 +27,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "15",
   },
   {
     username: "Thor",
@@ -37,6 +38,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "25",
   },
   {
     username: "Rikuuen",
@@ -47,6 +49,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "18",
   },
   {
     username: "Johnny",
@@ -57,6 +60,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "22",
   },
   {
     username: "CatLord",
@@ -67,6 +71,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "30",
   },
   {
     username: "Sparrow",
@@ -77,6 +82,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "19",
   },
   {
     username: "Prodev",
@@ -87,6 +93,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "28",
   },
 ];
 
@@ -102,6 +109,7 @@ export default function ProfileGrid() {
         bio: newProfile.bio || "No bio available",
         status: newProfile.status || "offline",
         lastSeen: newProfile.lastSeen || new Date(),
+        hourlyRate: newProfile.hourlyRate,
       },
     ]);
   };

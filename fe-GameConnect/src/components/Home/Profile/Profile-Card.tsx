@@ -36,9 +36,9 @@ export default function ProfileCard(props: Profile) {
           <div className="p-4 bg-purple-500 clip-your-needful-style">
             <div className="mb-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-lg font-semibold text-white">
+                <span className="text-lg font-semibold text-pink">
                   {props.username}
-                  Hourly Rate: A8{props.hourlyRate}
+                  Hourly Rate: {props.hourlyRate} A8
                 </span>
                 <span role="img" aria-label="verified">
                   👑
