@@ -2,22 +2,27 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star } from "lucide-react";
 import type { Profile } from "../../types/profile";
-import AddCommentComponent from './AddCommentComponent';
-import { useState } from 'react';
+import AddCommentComponent from "./AddCommentComponent";
+import { useState } from "react";
 
 interface ProfileDetailsProps {
   profile: Profile;
 }
 
 export function ProfileDetails({ profile }: ProfileDetailsProps) {
-  const [comments, setComments] = useState<{ rating: string; comment: string; }[]>([]);
+  const [comments, setComments] = useState<
+    { rating: string; comment: string }[]
+  >([]);
 
   const handleCommentAdded = (rating: string, newComment: string) => {
-    setComments((prevComments) => [...prevComments, { rating, comment: newComment }]);
+    setComments((prevComments) => [
+      ...prevComments,
+      { rating, comment: newComment },
+    ]);
   };
 
   return (
-    <div className="space-y-4 ">
+    <div className="space-y-4 bg-gradient-to-b from-gray-800 to-gray-900 text-white p-4 rounded-lg">
       <div className="flex items-start gap-4">
         <img
           src={profile.imageUrl}
@@ -69,7 +74,10 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         </div>
       </div>
       <Separator />
-      <AddCommentComponent username={profile.username} onCommentAdded={handleCommentAdded} />
+      <AddCommentComponent
+        username={profile.username}
+        onCommentAdded={handleCommentAdded}
+      />
       <div className="mt-4">
         <ul className="list-disc pl-5">
           {comments.map((comment, index) => (

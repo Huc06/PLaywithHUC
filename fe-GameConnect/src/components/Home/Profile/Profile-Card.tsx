@@ -71,11 +71,11 @@ export default function ProfileCard(props: Profile) {
           </div>
         </Card>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-white">
+      <DialogContent className="sm:max-w-[425px] bg-gradient-to-b from-gray-800 to-gray-900 border-none">
         <DialogHeader>
           <DialogTitle>Profile & Chat</DialogTitle>
         </DialogHeader>
-        <Tabs defaultValue="profile" className="w-full ">
+        <Tabs defaultValue="profile" className="w-full">
           <TabsList className="grid w-full grid-cols-2 bg-gray-200">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="chat">Chat</TabsTrigger>

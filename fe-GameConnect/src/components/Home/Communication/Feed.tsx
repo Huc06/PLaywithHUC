@@ -7,7 +7,7 @@ interface FeedProps {
 
 export function Feed({ posts }: FeedProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 whitespace-pre-line">
       {posts.map((post) => (
         <article key={post.id} className="bg-[#16161f] rounded-lg p-4">
           <div className="flex items-start justify-between mb-4">
@@ -20,9 +20,9 @@ export function Feed({ posts }: FeedProps) {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="font-medium">{post.author.name}</h3>
-                  <span className="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-xs">
+                  {/* <span className="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-xs">
                     RANK 1
-                  </span>
+                  </span> */}
                 </div>
                 <p className="text-sm text-gray-400">{post.timestamp}</p>
               </div>
@@ -33,8 +33,10 @@ export function Feed({ posts }: FeedProps) {
             </button>
           </div>
 
-          <div className="space-y-4">
-            <p>{post.content}</p>
+          <div className="space-y-4 ">
+            <p>
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </p>
 
             {post.image && (
               <img

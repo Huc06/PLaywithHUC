@@ -117,7 +117,10 @@ export default function ProfileGrid() {
       <div className="relative lg:mx-auto max-w-5xl mx-[1rem]">
         <div className="flex justify-between items-center mb-[1rem]">
           <h1 className="text-[2rem] font-bold font-bangers">ProFile</h1>
-          <Button onClick={() => setShowForm(true)} className="text-[2rem] font-bold font-bangers">
+          <Button
+            onClick={() => setShowForm(true)}
+            className="text-[2rem] font-bold font-bangers"
+          >
             Create Profile
           </Button>
         </div>
