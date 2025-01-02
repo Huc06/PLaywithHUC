@@ -32,7 +32,7 @@
     "swiper": "^11.1.15",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "viem": "^2.21.57",
+    "viem": "^2.22.1",
     "wagmi": "^2.14.6"
   },
   "devDependencies": {

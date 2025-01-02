@@ -82,7 +82,6 @@ function AddCommentComponent() {
         )}
       </form>
       <div style={{ marginTop: '20px' }}>
-        <h3>Comments:</h3>
         <ul>
           {comments.map((c, index) => (
             <li key={index}>
