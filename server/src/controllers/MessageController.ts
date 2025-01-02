@@ -1,45 +1,52 @@
 import { Request, Response } from 'express';
-import Message from '../models/Message';
+import { Message } from '../models/Message';
 import { Server, Socket } from 'socket.io';
+import User from '../models/User';
 
-// Create a new message
 export const createMessage = async (req: Request, res: Response) => {
-    try {
-        const { match_id, sender_id, receiver_id, content } = req.body;
-        const message = new Message({ match_id, sender_id, receiver_id, content });
-        await message.save();
-        res.status(201).json(message);
-    } catch (error) {
-        if (error instanceof Error) {
-            res.status(400).json({ error: error.message });
-        } else {
-            res.status(500).json({ error: 'An unknown error occurred' });
-        }
-    }
-};
+    const { senderAddr, text, username, roomId } = req.body;
 
-// Get messages by match ID
-export const getMessagesByMatchId = async (req: Request, res: Response) => {
-    try {
-        const messages = await Message.find({ match_id: req.params.matchId }).sort({ created_at: 1 });
-        res.json(messages);
-    } catch (error) {
-        if (error instanceof Error) {
-            res.status(400).json({ error: error.message });
-        } else {
-            res.status(500).json({ error: 'An unknown error occurred' });
-        }
+    // Validate input
+    if (!senderAddr || !text || !roomId) {
+        return res.status(400).json({ error: 'senderId, text, and roomId are required' });
     }
-};
 
-// Delete a message by ID
+    try {
+        const newMessage = new Message({
+            senderAddr,
+            text,
+            username,
+            roomId,
+            timestamp: new Date()
+        });
+
+        await newMessage.save();
+        res.status(201).json(newMessage);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to create message' });
+    }
+}
+
 export const deleteMessageById = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
     try {
-        const message = await Message.findByIdAndDelete(req.params.id);
-        if (!message) {
+        const deletedMessage = await Message.findByIdAndDelete(id);
+
+        if (!deletedMessage) {
             return res.status(404).json({ error: 'Message not found' });
         }
-        res.json({ message: 'Message deleted successfully' });
+
+        res.status(200).json({ message: 'Message deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to delete message' });
+    }
+}
+
+export const fetchMessages = async (req: Request, res: Response) => {
+    try {
+        const messages = await Message.find({ roomId: req.params.roomId }).sort({ timestamp: 1 });
+        res.status(200).json(messages);
     } catch (error) {
         if (error instanceof Error) {
             res.status(400).json({ error: error.message });
@@ -47,29 +54,36 @@ export const deleteMessageById = async (req: Request, res: Response) => {
             res.status(500).json({ error: 'An unknown error occurred' });
         }
     }
-};
+}
 
-// Function to handle socket events
 export const handleSocketConnection = (io: Server) => {
-    io.on('connection', (socket: Socket) => {
-        console.log('a user connected');
+    io.on('connection', (socket) => {
+        console.log('User  connected:', socket.id);
 
-        socket.on('joinRoom', (matchId) => {
-            socket.join(matchId);
-        });
-
-        socket.on('sendMessage', async (messageData) => {
-            try {
-                const message = new Message(messageData);
-                await message.save();
-                io.to(messageData.match_id).emit('receiveMessage', message);
-            } catch (error) {
-                console.error('Error saving message:', error);
+        socket.on('join', async ({ addr }) => {
+            let user = await User.findOne({ addr });
+            if (!user) {
+                user = new User({ addr });
+                await user.save();
             }
+            user.status = 'online';
+            await user.save();
+            socket.join(addr); // Join a room based on addr
         });
 
-        socket.on('disconnect', () => {
-            console.log('user disconnected');
+        socket.on('chat message', async (data) => {
+            const message = new Message(data);
+            await message.save();
+            io.emit('chat message', data); // Broadcast message to all clients
+        });
+
+        socket.on('disconnect', async () => {
+            console.log('User  disconnected:', socket.id);
+            const user = await User.findOne({ addr: socket.id });
+            if (user) {
+                user.status = 'offline';
+                await user.save();
+            }
         });
     });
 };
