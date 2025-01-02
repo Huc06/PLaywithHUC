@@ -2,7 +2,7 @@ import express from 'express';
 import {
     createUser,
     updateUserByAddr,
-    deleteUserById,
+    deleteUserByAddr,
     listUsers,
     getUserByAddr
 } from '../controllers/UserController';
@@ -19,7 +19,7 @@ router.get('/:id', getUserByAddr);
 router.put('/:id', updateUserByAddr);
 
 // Route to delete a user by ID
-router.delete('/:id', deleteUserById);
+router.delete('/:id', deleteUserByAddr);
 
 // Route to list all users
 router.get('/', listUsers);

@@ -66,9 +66,9 @@ export const updateUserByAddr = async (req: Request, res: Response) => {
 };
 
 // Delete a user by ID
-export const deleteUserById = async (req: Request, res: Response) => {
+export const deleteUserByAddr = async (req: Request, res: Response) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
+        const user = await User.findOneAndDelete({ addr: req.params.id });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
