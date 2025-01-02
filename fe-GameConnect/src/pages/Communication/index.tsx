@@ -23,12 +23,12 @@ export default function App() {
         id: "2",
         name: `Stellar Forger⚔️
               @Stellar Forger`,
-        avatar: `/src/assets/Services/game3.png`,
+        avatar: `public/assets/Services/game3.png`,
       },
       content: `Happy New Year to all Forgers! 🎉
 
 We're thrilled to share that Stellar Forger Alpha is coming soon! ☄️ Let’s make 2025 a year of growth, innovation, and unforgettable moments together. Thank you for being part of this incredible journey`,
-      image: "src/assets/post/newyear.png",
+      image: "public/assets/post/newyear.png",
       timestamp: "4 minutes ago",
       likes: 1,
       comments: 0,
@@ -39,7 +39,7 @@ We're thrilled to share that Stellar Forger Alpha is coming soon! ☄️ Let’s
         id: "2",
         name: `Onchain Clash⚔️🏆
         @OnchainClash`,
-        avatar: `src/assets/Services/game2.png`,
+        avatar: `public/assets/Services/game2.png`,
       },
       content: `How will you rise above the waves & claim victory in #OCC? 🌊 🏆
 
@@ -47,7 +47,7 @@ We're thrilled to share that Stellar Forger Alpha is coming soon! ☄️ Let’s
     1️⃣ Outlast: If time runs out, the faction with the most territories wins.
 
       The victorious team takes home the ENTIRE prize pool, funded by player cell purchases. 💵💰😌`,
-      image: "src/assets/post/onchclash.png",
+      image: "public/assets/post/onchclash.png",
       timestamp: "30 minutes ago",
       likes: 1,
       comments: 0,
@@ -58,13 +58,13 @@ We're thrilled to share that Stellar Forger Alpha is coming soon! ☄️ Let’s
         id: "2",
         name: `Zone Nine 🪓🧟
               @Zone9Survival`,
-        avatar: `src/assets/Services/game1.png`,
+        avatar: `public/assets/Services/game1.png`,
       },
       content: `They call it Garbage Camp Gate. A haven of hope and hell, where the only rule is survival. 
 Lawless. Ruthless. Broken.
 Here, in the Free Zone, shattered lives collide, gunfire is the common tongue and zols are worth more than life.
 Welcome to the Free Zone. No gods. No masters. Not even Machine God.`,
-      image: "src/assets/post/zonenine.png",
+      image: "public/assets/post/zonenine.png",
       timestamp: " 1 hours ago",
       likes: 1,
       comments: 0,

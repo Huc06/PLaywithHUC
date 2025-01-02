@@ -2,7 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star } from "lucide-react";
 import type { Profile } from "../../types/profile";
-import AddCommentComponent from "./AddCommentComponent";
 import { useState } from "react";
 import { useSendTransaction } from "wagmi";
 import { parseEther } from "viem";
@@ -18,7 +17,6 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
 
   const handleSendPayment = async () => {
     try {
-      // Validate the recipient address format (optional)
       if (!/^0x[a-fA-F0-9]{40}$/.test(recipientAddress)) {
         console.error("Invalid Ethereum address");
         return;
@@ -94,7 +92,7 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
           placeholder="Recipient Address"
           value={recipientAddress}
           onChange={(e) => setRecipientAddress(e.target.value)}
-          className="w-full p-2 border rounded mb-2"
+          className="w-full p-2 border rounded mb-2 text-black"
           required
         />
         <input
@@ -102,7 +100,7 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
           placeholder="Amount (ETH)"
           value={amountToSend}
           onChange={(e) => setAmountToSend(e.target.value)}
-          className="w-full p-2 border rounded mb-2"
+          className="w-full p-2 border rounded mb-2 text-black"
           required
         />
         <button
@@ -111,7 +109,6 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         >
           Send Payment
         </button>
-        <AddCommentComponent />
       </div>
     </div>
   );
