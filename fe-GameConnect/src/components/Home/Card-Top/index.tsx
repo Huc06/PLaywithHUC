@@ -6,7 +6,7 @@ import { CardTopProps } from "../../types/profile";
 const profiles = [
   {
     username: "Rikuuen",
-    imageUrl: "src/assets/Card/Rikuuen.png",
+    imageUrl: "public/assets/Card/Rikuuen.png",
     tag: "Shadow Slayer", // Tag mới
     game: {
       name: "Master Duel",
@@ -15,7 +15,7 @@ const profiles = [
   },
   {
     username: "Lissa",
-    imageUrl: "src/assets/Card/image4.png",
+    imageUrl: "public/assets/Card/image4.png",
     tag: "Wave Master", // Tag mới
     game: {
       name: "Onchain Clash",
@@ -24,7 +24,7 @@ const profiles = [
   },
   {
     username: "Squiddu",
-    imageUrl: "src/assets/Card/Squiddu.png",
+    imageUrl: "public/assets/Card/Squiddu.png",
     tag: "Survival Specialist", // Tag mới
     game: {
       name: "Zone Nine",
@@ -33,7 +33,7 @@ const profiles = [
   },
   {
     username: "Prodev",
-    imageUrl: "src/assets/Card/image1.png",
+    imageUrl: "public/assets/Card/image1.png",
     tag: "Pro player", // Tag mới
     game: {
       name: "Stellar Forger",

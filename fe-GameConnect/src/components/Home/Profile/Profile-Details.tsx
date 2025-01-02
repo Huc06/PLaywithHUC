@@ -18,8 +18,14 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
 
   const handleSendPayment = async () => {
     try {
+      // Validate the recipient address format (optional)
+      if (!/^0x[a-fA-F0-9]{40}$/.test(recipientAddress)) {
+        console.error("Invalid Ethereum address");
+        return;
+      }
+
       const tx = await sendTransaction({
-        to: recipientAddress as `0x${string}`,
+        to: recipientAddress as `0x${string}`, // Type assertion
         value: parseEther(amountToSend),
       });
       console.log("Transaction sent:", tx);

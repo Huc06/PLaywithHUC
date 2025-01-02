@@ -8,7 +8,7 @@ import Modal from "./Modal";
 const initialProfiles = [
   {
     username: "Lissa",
-    imageUrl: "src/assets/Card/image4.png",
+    imageUrl: "public/assets/Card/image4.png",
     badges: ["GAMING SCORES", "NEWS", "E-CHAT"],
     interactions: 9,
     bio: "Passionate gamer and creative content maker.",
@@ -19,7 +19,7 @@ const initialProfiles = [
   },
   {
     username: "Squiddu",
-    imageUrl: "src/assets/Card/Squiddu.png",
+    imageUrl: "public/assets/Card/Squiddu.png",
     badges: ["E-CHAT", "NEWS", "Zone Nine"],
     interactions: 6,
     bio: "Exploring the world of League of Legends one match at a time.",
@@ -30,7 +30,7 @@ const initialProfiles = [
   },
   {
     username: "Thor",
-    imageUrl: "src/assets/Card/image2.png",
+    imageUrl: "public/assets/Card/image2.png",
     badges: ["E-CHAT", "NEWS", "Stellar Forger"],
     interactions: 9,
     bio: "Lightning-fast reflexes and a love for epic battles.",
@@ -41,7 +41,7 @@ const initialProfiles = [
   },
   {
     username: "Rikuuen",
-    imageUrl: "src/assets/Card/Rikuuen.png",
+    imageUrl: "public/assets/Card/Rikuuen.png",
     badges: ["E-CHAT", "NEWS", "Onchain Clash"],
     interactions: 4,
     bio: "Gaming enthusiast with a knack for strategy.",
@@ -52,7 +52,7 @@ const initialProfiles = [
   },
   {
     username: "Johnny",
-    imageUrl: "src/assets/Card/johnny.png",
+    imageUrl: "public/assets/Card/johnny.png",
     badges: ["E-CHAT", "NEWS", "Omnizone"],
     interactions: 5,
     bio: "Dedicated to climbing the ranks in the gaming world.",
@@ -63,7 +63,7 @@ const initialProfiles = [
   },
   {
     username: "CatLord",
-    imageUrl: "src/assets/Card/image6.png",
+    imageUrl: "public/assets/Card/image6.png",
     badges: ["E-CHAT", "MasterDuel", "Omnizone"],
     interactions: 3,
     bio: "Master strategist with a love for cats and cards.",
@@ -74,7 +74,7 @@ const initialProfiles = [
   },
   {
     username: "Sparrow",
-    imageUrl: "src/assets/Card/image7.png",
+    imageUrl: "public/assets/Card/image7.png",
     badges: ["E-CHAT", "NEWS", "Omnizone"],
     interactions: 4,
     bio: "Soaring through gaming adventures with style.",
@@ -85,7 +85,7 @@ const initialProfiles = [
   },
   {
     username: "Prodev",
-    imageUrl: "src/assets/Card/image1.png",
+    imageUrl: "public/assets/Card/image1.png",
     badges: ["E-CHAT", "Stellar Forger", "Zone Nine"],
     interactions: 4,
     bio: "Tech enthusiast by day, gaming legend by night.",
