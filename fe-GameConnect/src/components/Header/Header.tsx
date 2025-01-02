@@ -18,10 +18,10 @@ export function Header() {
             to="/"
             className="text-2xl sm:text-3xl font-bold flex items-center space-x-2"
           >
-            <span>PlaywithHUc</span>
+            <span>PlaywithHUC</span>
             <img src={merry} alt="Merry" className="h-10 w-10" />
           </Link>
-          <Link to="/communication" className="text-xl font-bold">
+          <Link to="/communication" className="text-2xl font-bold">
             <span>Communication</span>
           </Link>
         </div>
