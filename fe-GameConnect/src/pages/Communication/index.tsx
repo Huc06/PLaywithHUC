@@ -23,7 +23,8 @@ export default function App() {
         id: "2",
         name: `Stellar Forger⚔️
               @Stellar Forger`,
-        avatar: `public/static/Services/game3.png`,
+        // avatar: `public/static/Services/game3.png`,
+        avatar: `public/static/year.png`,
       },
       content: `Happy New Year to all Forgers! 🎉
 
