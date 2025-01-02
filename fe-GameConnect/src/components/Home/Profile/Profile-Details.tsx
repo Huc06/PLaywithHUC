@@ -19,7 +19,7 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
   const handleSendPayment = async () => {
     try {
       const tx = await sendTransaction({
-        to: recipientAddress,
+        to: recipientAddress as `0x${string}`, 
         value: parseEther(amountToSend),
       });
       console.log('Transaction sent:', tx);
@@ -81,7 +81,6 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         </div>
       </div>
       <Separator />
-      <AddCommentComponent />
       <div className="mt-4">
         <h3 className="font-bold">Send Payment:</h3>
         <input
@@ -106,6 +105,7 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         >
           Send Payment
         </button>
+        <AddCommentComponent/>
       </div>
     </div>
   );

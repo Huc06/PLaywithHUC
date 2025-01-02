@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Message, ChatProps } from "../types/Profile";
+import { Message, ChatProps } from "../types/profile";
 import { Send } from "lucide-react";
 
 export function Chat({ username }: ChatProps) {
