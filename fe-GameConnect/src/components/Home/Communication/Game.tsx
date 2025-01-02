@@ -1,4 +1,4 @@
-const link = "public/assets/Services/";
+const link = "public/Services/";
 
 const games = [
   {

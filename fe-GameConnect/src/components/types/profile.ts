@@ -38,4 +38,5 @@ export interface Profile {
   lastSeen: Date;
   rating: number;
   hourlyRate: string;
+  walletAddress: string;
 }

@@ -6,38 +6,38 @@ import { CardTopProps } from "../../types/profile";
 const profiles = [
   {
     username: "Rikuuen",
-    imageUrl: "public/assets/Card/Rikuuen.png",
+    imageUrl: "public/Card/Rikuuen.png",
     tag: "Shadow Slayer", // Tag mới
     game: {
       name: "Master Duel",
-      logo: "src/assets/Services/game4.png",
+      logo: "public/Services/game4.png",
     },
   },
   {
     username: "Lissa",
-    imageUrl: "public/assets/Card/image4.png",
+    imageUrl: "public/Card/image4.png",
     tag: "Wave Master", // Tag mới
     game: {
       name: "Onchain Clash",
-      logo: "src/assets/Services/game2.png",
+      logo: "public/Services/game2.png",
     },
   },
   {
     username: "Squiddu",
-    imageUrl: "public/assets/Card/Squiddu.png",
+    imageUrl: "public/Card/Squiddu.png",
     tag: "Survival Specialist", // Tag mới
     game: {
       name: "Zone Nine",
-      logo: "src/assets/Services/game1.png",
+      logo: "public/Services/game1.png",
     },
   },
   {
     username: "Prodev",
-    imageUrl: "public/assets/Card/image1.png",
+    imageUrl: "public/Card/image1.png",
     tag: "Pro player", // Tag mới
     game: {
       name: "Stellar Forger",
-      logo: "src/assets/Services/game3.png",
+      logo: "public/Services/game3.png",
     },
   },
 ];

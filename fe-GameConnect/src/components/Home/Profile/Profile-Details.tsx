@@ -86,6 +86,14 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
       </div>
       <Separator />
       <div className="mt-4">
+        <h3 className="font-bold">Wallet Address:</h3>
+        <p className="text-gray-300">{profile.walletAddress}</p>
+      </div>
+      <div className="mt-4">
+        <h3 className="font-bold">Hourly Rate:</h3>
+        <p className="text-gray-300">{profile.hourlyRate} A8</p>
+      </div>
+      <div className="mt-4">
         <h3 className="font-bold">Send Payment:</h3>
         <input
           type="text"

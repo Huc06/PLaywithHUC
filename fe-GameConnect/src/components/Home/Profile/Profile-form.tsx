@@ -23,6 +23,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
   const [formData, setFormData] = useState<{
     hourlyRate: string;
     username: string;
+    walletAddress: string;
     imageType: "url" | "upload";
     imageUrl: string;
     imageFile: string;
@@ -32,6 +33,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
   }>({
     hourlyRate: "",
     username: "",
+    walletAddress: "",
     imageType: "url",
     imageUrl: "",
     imageFile: "",
@@ -89,11 +91,11 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2"> {/* Reduced spacing */}
-      <h2 className="text-2xl font-bold mb-2 font-bangers"> {/* Reduced font size */}
+    <form onSubmit={handleSubmit} className="space-y-2">
+      <h2 className="text-2xl font-bold mb-2 font-bangers">
         Create New Profile
       </h2>
-      <div className="space-y-1"> {/* Reduced spacing */}
+      <div className="space-y-1">
         <Label htmlFor="hourlyRate">Hourly Rate</Label>
         <Input
           id="hourlyRate"
@@ -104,7 +106,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
           required
         />
       </div>
-      <div className="space-y-1"> {/* Reduced spacing */}
+      <div className="space-y-1">
         <Label htmlFor="username">Username</Label>
         <Input
           id="username"
@@ -115,25 +117,36 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
           required
         />
       </div>
-      <div className="space-y-1"> {/* Reduced spacing */}
+      <div className="space-y-1">
+        <Label htmlFor="walletAddress">Wallet Address</Label>
+        <Input
+          id="walletAddress"
+          name="walletAddress"
+          value={formData.walletAddress}
+          onChange={handleChange}
+          placeholder="Enter your wallet address"
+          required
+        />
+      </div>
+      <div className="space-y-1">
         <Label>Profile Image</Label>
         <RadioGroup
           defaultValue="url"
           onValueChange={handleImageTypeChange}
           className="flex"
         >
-          <div className="flex items-center space-x-1"> {/* Reduced spacing */}
+          <div className="flex items-center space-x-1">
             <RadioGroupItem value="url" id="url" className="bg-white" />
             <Label htmlFor="url">Image URL</Label>
           </div>
-          <div className="flex items-center space-x-1"> {/* Reduced spacing */}
+          <div className="flex items-center space-x-1">
             <RadioGroupItem value="upload" id="upload" className="bg-white" />
             <Label htmlFor="upload">Upload Image</Label>
           </div>
         </RadioGroup>
       </div>
       {formData.imageType === "url" ? (
-        <div className="space-y-1"> {/* Reduced spacing */}
+        <div className="space-y-1">
           <Label htmlFor="imageUrl">Image URL</Label>
           <Input
             id="imageUrl"
@@ -147,7 +160,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
       ) : (
         <ImageUpload onImageSelected={handleImageSelected} />
       )}
-      <div className="space-y-1"> {/* Reduced spacing */}
+      <div className="space-y-1">
         <Label htmlFor="badges">Badges</Label>
         <Input
           id="badges"
@@ -158,7 +171,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
           required
         />
       </div>
-      <div className="space-y-1"> {/* Reduced spacing */}
+      <div className="space-y-1">
         <Label htmlFor="bio">Bio</Label>
         <Textarea
           id="bio"
@@ -169,7 +182,7 @@ export default function ProfileForm({ onSubmit, onCancel }: ProfileFormProps) {
           required
         />
       </div>
-      <div className="flex justify-end space-x-1"> {/* Reduced spacing */}
+      <div className="flex justify-end space-x-1">
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
         </Button>
