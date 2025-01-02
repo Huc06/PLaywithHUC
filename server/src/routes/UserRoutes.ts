@@ -1,7 +1,7 @@
 import express from 'express';
 import {
     createUser,
-    updateUserById,
+    updateUserByAddr,
     deleteUserById,
     listUsers,
     getUserByAddr
@@ -16,7 +16,7 @@ router.post('/', createUser);
 router.get('/:id', getUserByAddr);
 
 // Route to update a user by ID
-router.put('/:id', updateUserById);
+router.put('/:id', updateUserByAddr);
 
 // Route to delete a user by ID
 router.delete('/:id', deleteUserById);

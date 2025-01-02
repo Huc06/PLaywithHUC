@@ -47,9 +47,11 @@ export const getUserByAddr = async (req: Request, res: Response) => {
 };
 
 // Update a user by ID
-export const updateUserById = async (req: Request, res: Response) => {
+export const updateUserByAddr = async (req: Request, res: Response) => {
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        console.log("req body: ", req.body);
+        const userAddr = req.params.id;
+        const user = await User.findOneAndUpdate({ addr: userAddr }, req.body, { new: true, runValidators: true });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
