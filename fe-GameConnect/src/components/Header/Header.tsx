@@ -5,7 +5,7 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Search } from "./Search";
-import merry from "../../../public/merry.svg";
+import merry from "../../../public/static/merry.svg";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
