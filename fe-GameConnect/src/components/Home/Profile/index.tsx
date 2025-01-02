@@ -16,6 +16,7 @@ const initialProfiles = [
     lastSeen: new Date(),
     rating: 5.0,
     hourlyRate: "20",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "Squiddu",
@@ -27,6 +28,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "15",
+    walletAddress: "0xabcdefabcdefabcdefabcdefabcdefabcdef",
   },
   {
     username: "Thor",
@@ -38,6 +40,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "25",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "Rikuuen",
@@ -49,6 +52,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "18",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "Johnny",
@@ -60,6 +64,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "22",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "CatLord",
@@ -71,6 +76,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "30",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "Sparrow",
@@ -82,6 +88,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "19",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
   {
     username: "Prodev",
@@ -93,6 +100,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "28",
+    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
   },
 ];
 
