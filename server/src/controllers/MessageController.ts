@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { Message } from '../models/Message';
 import { Server, Socket } from 'socket.io';
 import User from '../models/User';
+import { ChatRoom } from '../models/ChatRoom';
 
 export const createMessage = async (req: Request, res: Response) => {
     const { senderAddr, text, username, roomId } = req.body;
@@ -58,7 +59,7 @@ export const fetchMessages = async (req: Request, res: Response) => {
 
 export const handleSocketConnection = (io: Server) => {
     io.on('connection', (socket) => {
-        console.log('User  connected:', socket.id);
+        console.log('User connected:', socket.id);
 
         socket.on('join', async ({ addr }) => {
             let user = await User.findOne({ addr });
@@ -68,13 +69,29 @@ export const handleSocketConnection = (io: Server) => {
             }
             user.status = 'online';
             await user.save();
-            socket.join(addr); // Join a room based on addr
+            socket.join(addr); // Join personal room
+
+            // Tìm và join tất cả các phòng chat của user
+            const rooms = await ChatRoom.find({ participants: addr });
+            rooms.forEach(room => {
+                socket.join(room._id.toString());
+            });
         });
 
         socket.on('chat message', async (data) => {
-            const message = new Message(data);
+            const { roomId, senderAddr, text, username } = data;
+
+            const message = new Message({
+                senderAddr,
+                text,
+                username,
+                roomId,
+                timestamp: new Date()
+            });
             await message.save();
-            io.emit('chat message', data); // Broadcast message to all clients
+
+            // Gửi tin nhắn chỉ cho những người trong phòng
+            io.to(roomId).emit('chat message', message);
         });
 
         socket.on('disconnect', async () => {
