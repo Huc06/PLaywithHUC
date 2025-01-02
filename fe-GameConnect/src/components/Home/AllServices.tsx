@@ -1,7 +1,7 @@
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const link = "public/static/Services/";
+const link = "static/Services/";
 
 const photoscarous = [
   link + "friend.png",

@@ -40,17 +40,17 @@ export function Sidebar({ onCreatePost }: SidebarProps) {
 
         <div className="flex gap-2 mb-4">
           <img
-            src="public/static/Card/Rikuuen.png"
+            src="static/Card/Rikuuen.png"
             alt="User avatar"
             className="w-8 h-8 rounded-full"
           />
           <img
-            src="public/static/Card/image4.png"
+            src="static/Card/image4.png"
             alt="User avatar"
             className="w-8 h-8 rounded-full"
           />
           <img
-            src="public/static/Card/Squiddu.png"
+            src="static/Card/Squiddu.png"
             alt="User avatar"
             className="w-8 h-8 rounded-full"
           />

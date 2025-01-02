@@ -4,7 +4,7 @@ import ProfileGrid from "@/components/Home/Profile";
 import { CardTopGrid } from "@/components/Home/Card-Top";
 
 const Home = () => {
-  const link = "public/static/slider/";
+  const link = "static/slider/";
   const images = [
     link + "play.png",
     link + "custom.png",

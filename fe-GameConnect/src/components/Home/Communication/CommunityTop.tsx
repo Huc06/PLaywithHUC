@@ -6,7 +6,7 @@ export function CommunityTop() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <img
-            src="public/static/Card/Rikuuen.png"
+            src="static/Card/Rikuuen.png"
             alt="User avatar"
             className="w-12 h-12 rounded-full"
           />
@@ -27,7 +27,7 @@ export function CommunityTop() {
 
         <div className="flex items-center gap-3">
           <img
-            src="public/static/Card/image4.png"
+            src="static/Card/image4.png"
             alt="User avatar"
             className="w-12 h-12 rounded-full"
           />
@@ -46,7 +46,7 @@ export function CommunityTop() {
         </div>
         <div className="flex items-center gap-3">
           <img
-            src="public/static/Card/Squiddu.png"
+            src="static/Card/Squiddu.png"
             alt="User avatar"
             className="w-12 h-12 rounded-full"
           />
