@@ -13,6 +13,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Chat } from "../Chat";
 import { ProfileDetails } from "./Profile-Details";
+import AddCommentComponent from "./AddCommentComponent";
 
 export default function ProfileCard(props: Profile) {
   return (
@@ -78,15 +79,19 @@ export default function ProfileCard(props: Profile) {
           </DialogTitle>
         </DialogHeader>
         <Tabs defaultValue="profile" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-gray-200">
+          <TabsList className="grid w-full grid-cols-3 bg-gray-200">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="chat">Chat</TabsTrigger>
+            <TabsTrigger value="comments">Comments</TabsTrigger>
           </TabsList>
           <TabsContent value="profile">
             <ProfileDetails profile={props} />
           </TabsContent>
           <TabsContent value="chat">
             <Chat username={props.username} />
+          </TabsContent>
+          <TabsContent value="comments">
+            <AddCommentComponent/>
           </TabsContent>
         </Tabs>
       </DialogContent>

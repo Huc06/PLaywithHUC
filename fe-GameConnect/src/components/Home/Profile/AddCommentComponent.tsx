@@ -127,15 +127,47 @@ function AddCommentComponent() {
           </div>
         )}
       </form>
-      <div style={{ marginTop: "20px" }}>
-        <h3>Comments:</h3>
-        <ul>
+      <div className="mt-8">
+        <h3 className="text-xl font-semibold text-white mb-4">Comments:</h3>
+        <ul className="space-y-4">
           {comments.map((c, index) => (
-            <li key={index}>
-              <strong>Rating:</strong> {c.rating} <br />
-              <strong>Comment:</strong> {c.comment}
+            <li key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">
+              <div className="flex justify-between">
+                <strong className="text-yellow-400">Rating:</strong>
+                <span className="text-white">{c.rating}</span>
+              </div>
+              <p className="text-gray-300 mt-1">
+                <strong>Comment:</strong> {c.comment}
+              </p>
             </li>
           ))}
+          <li className="p-4 bg-gray-800 rounded-lg shadow-md">
+            <div className="flex justify-between">
+              <strong className="text-yellow-400">Rating:</strong>
+              <span className="text-white">5</span>
+            </div>
+            <p className="text-gray-300 mt-1">
+              <strong>Comment:</strong> Excellent service and great experience!
+            </p>
+          </li>
+          <li className="p-4 bg-gray-800 rounded-lg shadow-md">
+            <div className="flex justify-between">
+              <strong className="text-yellow-400">Rating:</strong>
+              <span className="text-white">4</span>
+            </div>
+            <p className="text-gray-300 mt-1">
+              <strong>Comment:</strong> Good, but there is room for improvement.
+            </p>
+          </li>
+          <li className="p-4 bg-gray-800 rounded-lg shadow-md">
+            <div className="flex justify-between">
+              <strong className="text-yellow-400">Rating:</strong>
+              <span className="text-white">3</span>
+            </div>
+            <p className="text-gray-300 mt-1">
+              <strong>Comment:</strong> Average experience, nothing special.
+            </p>
+          </li>
         </ul>
       </div>
     </div>
