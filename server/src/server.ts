@@ -2,11 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import cors from 'cors';
 import userRoutes from './routes/UserRoutes';
-import swipeRoutes from './routes/SwipeRoutes';
-import matchRoutes from './routes/MatchRoutes';
 import messageRoutes from './routes/MessageRoutes';
-import blockRoutes from './routes/BlockRoutes';
-import reportRoutes from './routes/ReportRoutes';
 import mongoose from 'mongoose';
 import http from 'http';
 import { Server } from 'socket.io';
@@ -51,11 +47,7 @@ app.use(session({
 handleSocketConnection(io);
 
 app.use('/users', userRoutes);
-app.use('/swipes', swipeRoutes);
-app.use('/matches', matchRoutes);
 app.use('/messages', messageRoutes);
-app.use('/blocks', blockRoutes);
-app.use('/reports', reportRoutes);
 
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
