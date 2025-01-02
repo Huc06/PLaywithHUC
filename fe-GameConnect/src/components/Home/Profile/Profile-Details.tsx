@@ -2,12 +2,20 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star } from "lucide-react";
 import type { Profile } from "../../types/profile";
+import AddCommentComponent from './AddCommentComponent';
+import { useState } from 'react';
 
 interface ProfileDetailsProps {
   profile: Profile;
 }
 
 export function ProfileDetails({ profile }: ProfileDetailsProps) {
+  const [comments, setComments] = useState<{ rating: string; comment: string; }[]>([]);
+
+  const handleCommentAdded = (rating: string, newComment: string) => {
+    setComments((prevComments) => [...prevComments, { rating, comment: newComment }]);
+  };
+
   return (
     <div className="space-y-4 ">
       <div className="flex items-start gap-4">
@@ -59,6 +67,18 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
               : "N/A"}
           </p>
         </div>
+      </div>
+      <Separator />
+      <AddCommentComponent username={profile.username} onCommentAdded={handleCommentAdded} />
+      <div className="mt-4">
+        <ul className="list-disc pl-5">
+          {comments.map((comment, index) => (
+            <li key={index} className="text-sm text-gray-700">
+              <strong>Rating:</strong> {comment.rating} <br />
+              <strong>Comment:</strong> {comment.comment}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

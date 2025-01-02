@@ -4,6 +4,7 @@ import ProfileForm from "./Profile-form";
 import { useState } from "react";
 import { Profile } from "../../types/profile";
 import Modal from "./Modal";
+
 const initialProfiles = [
   {
     username: "Lissa",
@@ -14,6 +15,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(),
     rating: 5.0,
+    hourlyRate: "20",
   },
   {
     username: "Squiddu",
@@ -24,6 +26,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "15",
   },
   {
     username: "Thor",
@@ -34,6 +37,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "25",
   },
   {
     username: "Rikuuen",
@@ -44,6 +48,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "18",
   },
   {
     username: "Johnny",
@@ -54,6 +59,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "22",
   },
   {
     username: "CatLord",
@@ -64,6 +70,7 @@ const initialProfiles = [
     status: "online" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "30",
   },
   {
     username: "Sparrow",
@@ -74,6 +81,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "19",
   },
   {
     username: "Prodev",
@@ -84,6 +92,7 @@ const initialProfiles = [
     status: "offline" as const,
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
+    hourlyRate: "28",
   },
 ];
 
@@ -101,7 +110,6 @@ export default function ProfileGrid() {
         lastSeen: newProfile.lastSeen || new Date(),
       },
     ]);
-    setShowForm(false);
   };
 
   return (
@@ -109,7 +117,9 @@ export default function ProfileGrid() {
       <div className="relative lg:mx-auto max-w-5xl mx-[1rem]">
         <div className="flex justify-between items-center mb-[1rem]">
           <h1 className="text-[2rem] font-bold font-bangers">ProFile</h1>
-          <Button onClick={() => setShowForm(true)}>Create Profile</Button>
+          <Button onClick={() => setShowForm(true)} className="text-[2rem] font-bold font-bangers">
+            Create Profile
+          </Button>
         </div>
         <Modal isOpen={showForm} onClose={() => setShowForm(false)}>
           <ProfileForm

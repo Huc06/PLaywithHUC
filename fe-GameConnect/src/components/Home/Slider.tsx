@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "@/styles/slider.module.css";
+import styles from "../../styles/Slider.module.css";
 
 type SliderProps = {
   images: string[];

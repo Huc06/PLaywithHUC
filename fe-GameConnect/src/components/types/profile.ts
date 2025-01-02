@@ -30,12 +30,12 @@ export interface ChatProps {
 
 export interface Profile {
   username: string;
-  rating: number;
   imageUrl: string;
   badges: string[];
   interactions: number;
-  bio?: string;
-  status?: "online" | "offline";
-  lastSeen?: Date;
-  messages?: Message[];
+  bio: string;
+  status: "online" | "offline";
+  lastSeen: Date;
+  rating: number;
+  hourlyRate: string;
 }
