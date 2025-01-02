@@ -2,27 +2,39 @@ import { Request, Response } from 'express';
 import User from '../models/User';
 
 // Create a new user
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (_addr: string) => {
     try {
-        const user = new User(req.body);
+        const user = new User({
+            addr: _addr,
+            name: "",
+            imageUrl: "",
+            badges: "",
+            interactions: null,
+            bio: "",
+            status: "",
+            lastSeen: null,
+            rating: null,
+            hourlyRate: "",
+        });
         await user.save();
-        res.status(201).json(user);
     } catch (error) {
         if (error instanceof Error) {
-            res.status(400).json({ error: error.message });
+            throw new Error("Error: " + error);
         } else {
-            res.status(500).json({ error: 'An unknown error occurred' });
+            throw new Error("An unknown error occurred");
         }
     }
 };
 
 // Get a user by ID
-export const getUserById = async (req: Request, res: Response) => {
+export const getUserByAddr = async (req: Request, res: Response) => {
     try {
-        console.log(req.params.id);
-        const user = await User.findById(req.params.id);
+        //console.log(req.params.id);
+        const userAddr = req.params.id;
+        const user = await User.findOne({ addr: userAddr });
+        console.log("user: ", user);
         if (!user) {
-            return res.status(404).json({ error: 'User not found' });
+            createUser(userAddr);
         }
         res.json(user);
     } catch (error) {

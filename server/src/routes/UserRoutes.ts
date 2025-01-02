@@ -4,9 +4,8 @@ import {
     updateUserById,
     deleteUserById,
     listUsers,
-    getUserById
+    getUserByAddr
 } from '../controllers/UserController';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const router = express.Router();
 
@@ -14,7 +13,7 @@ const router = express.Router();
 router.post('/', createUser);
 
 // Route to get a user by ID
-router.get('/:id', getUserById);
+router.get('/:id', getUserByAddr);
 
 // Route to update a user by ID
 router.put('/:id', updateUserById);
