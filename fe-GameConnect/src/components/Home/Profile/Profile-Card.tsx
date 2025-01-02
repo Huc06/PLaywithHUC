@@ -73,7 +73,9 @@ export default function ProfileCard(props: Profile) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-gradient-to-b from-gray-800 to-gray-900 border-none">
         <DialogHeader>
-          <DialogTitle>Profile & Chat</DialogTitle>
+          <DialogTitle className="text-white font-bangers">
+            Profile & Chat
+          </DialogTitle>
         </DialogHeader>
         <Tabs defaultValue="profile" className="w-full">
           <TabsList className="grid w-full grid-cols-2 bg-gray-200">

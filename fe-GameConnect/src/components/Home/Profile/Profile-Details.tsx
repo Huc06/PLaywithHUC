@@ -4,21 +4,28 @@ import { Star } from "lucide-react";
 import type { Profile } from "../../types/profile";
 import AddCommentComponent from "./AddCommentComponent";
 import { useState } from "react";
+import { useSendTransaction } from "wagmi";
+import { parseEther } from "viem";
 
 interface ProfileDetailsProps {
   profile: Profile;
 }
 
 export function ProfileDetails({ profile }: ProfileDetailsProps) {
-  const [comments, setComments] = useState<
-    { rating: string; comment: string }[]
-  >([]);
+  const [recipientAddress, setRecipientAddress] = useState(""); // State cho địa chỉ người nhận
+  const [amountToSend, setAmountToSend] = useState(""); // State cho số tiền
+  const { sendTransaction } = useSendTransaction();
 
-  const handleCommentAdded = (rating: string, newComment: string) => {
-    setComments((prevComments) => [
-      ...prevComments,
-      { rating, comment: newComment },
-    ]);
+  const handleSendPayment = async () => {
+    try {
+      const tx = await sendTransaction({
+        to: recipientAddress as `0x${string}`,
+        value: parseEther(amountToSend),
+      });
+      console.log("Transaction sent:", tx);
+    } catch (error) {
+      console.error("Transaction failed:", error);
+    }
   };
 
   return (
@@ -74,19 +81,31 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         </div>
       </div>
       <Separator />
-      <AddCommentComponent
-        username={profile.username}
-        onCommentAdded={handleCommentAdded}
-      />
       <div className="mt-4">
-        <ul className="list-disc pl-5">
-          {comments.map((comment, index) => (
-            <li key={index} className="text-sm text-gray-700">
-              <strong>Rating:</strong> {comment.rating} <br />
-              <strong>Comment:</strong> {comment.comment}
-            </li>
-          ))}
-        </ul>
+        <h3 className="font-bold">Send Payment:</h3>
+        <input
+          type="text"
+          placeholder="Recipient Address"
+          value={recipientAddress}
+          onChange={(e) => setRecipientAddress(e.target.value)}
+          className="w-full p-2 border rounded mb-2"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Amount (ETH)"
+          value={amountToSend}
+          onChange={(e) => setAmountToSend(e.target.value)}
+          className="w-full p-2 border rounded mb-2"
+          required
+        />
+        <button
+          onClick={handleSendPayment}
+          className="p-2 bg-blue-500 text-white rounded"
+        >
+          Send Payment
+        </button>
+        <AddCommentComponent />
       </div>
     </div>
   );
