@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
+import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Search } from "./Search";
 import merry from "../../../public/static/merry.svg";
+import { getUserByAddr } from "@/services/userService"
 
-export function Header() {
+export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { address, isConnected } = useAccount();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (!address) return;
+      const user = await getUserByAddr(address as string);
+      console.log("User data: ", user);
+    }
+    fetchUser();
+  }, [isConnected, address]);
 
   return (
     <nav className="bg-background px-4 sm:px-6 lg:px-16 py-3">
