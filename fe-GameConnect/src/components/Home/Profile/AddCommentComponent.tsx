@@ -33,8 +33,8 @@ function AddCommentComponent() {
 
       // Add the new comment to the local state
       setComments((prevComments) => [
-        ...prevComments,
         { profileId, rating, comment },
+        ...prevComments,
       ]);
     } else {
       console.error("write function is not available");
@@ -47,92 +47,73 @@ function AddCommentComponent() {
     });
 
   return (
-    <div>
+    <div className="flex flex-col md:flex-row items-start justify-center gap-8 p-4 w-full">
+      {/* Form Section */}
       <form
         onSubmit={submit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          maxWidth: "400px",
-          margin: "0 auto",
-          padding: "20px",
-        }}
-        className="text-black"
+        className="w-[400px] flex flex-col max-w-md p-6 bg-gray-900 rounded-lg shadow-lg"
       >
+        <h3 className="text-2xl font-semibold text-white mb-4">
+          Add a Comment
+        </h3>
         <input
           name="profileId"
           placeholder="Profile ID"
           required
-          style={{
-            marginBottom: "10px",
-            padding: "10px",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-          }}
+          className="mb-4 p-3 rounded-md border border-gray-700 bg-gray-800 text-white"
         />
         <input
           name="rating"
           placeholder="Rating (1-5)"
           required
-          style={{
-            marginBottom: "10px",
-            padding: "10px",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-          }}
+          className="mb-4 p-3 rounded-md border border-gray-700 bg-gray-800 text-white"
         />
-        <input
+        <textarea
           name="comment"
           placeholder="Type your comment..."
           required
-          style={{
-            marginBottom: "10px",
-            padding: "10px",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-          }}
-        />
+          rows={4}
+          className="mb-4 p-3 rounded-md border border-gray-700 bg-gray-800 text-white"
+        ></textarea>
         <button
           disabled={isPending}
           type="submit"
-          style={{
-            padding: "10px",
-            borderRadius: "4px",
-            border: "none",
-            backgroundColor: "#4CAF50",
-            color: "white",
-            cursor: "pointer",
-          }}
+          className={`p-3 rounded-md bg-green-600 text-white font-bold ${
+            isPending ? "opacity-50 cursor-not-allowed" : "hover:bg-green-500"
+          }`}
         >
           {isPending ? "Submitting..." : "Add Comment"}
         </button>
         {hash && (
-          <div style={{ marginTop: "10px", color: "#333" }}>
-            Transaction Hash: {hash}
+          <div className="mt-4 text-gray-300">
+            Transaction Hash: <span className="font-semibold">{hash}</span>
           </div>
         )}
         {isConfirming && (
-          <div style={{ marginTop: "10px", color: "#333" }}>
+          <div className="mt-4 text-yellow-400">
             Waiting for confirmation...
           </div>
         )}
         {isConfirmed && (
-          <div style={{ marginTop: "10px", color: "#4CAF50" }}>
-            Transaction confirmed.
-          </div>
+          <div className="mt-4 text-green-500">Transaction confirmed.</div>
         )}
         {error && (
-          <div style={{ marginTop: "10px", color: "red" }}>
+          <div className="mt-4 text-red-500">
             Error: {(error as BaseError).shortMessage || error.message}
           </div>
         )}
       </form>
-      <div className="mt-8">
-        <h3 className="text-xl font-semibold text-white mb-4">Comments:</h3>
-        <ul className="space-y-4">
+
+      {/* Comments Section */}
+      <div className="flex flex-col flex-wrap items-start w-fit max-w-md min-w-[300px]">
+        <h3 className="text-2xl font-semibold text-white mb-4">Comments:</h3>
+        <ul className="space-y-4 max-h-[300px] overflow-y-auto break-all no-scrollbar">
           {comments.map((c, index) => (
-            <li key={index} className="p-4 bg-gray-800 rounded-lg shadow-md">
-              <div className="flex justify-between">
+            <li
+              key={index}
+              className="p-4 bg-gray-800 rounded-lg shadow-md w-fit "
+            >
+              <div className="flex justify-between items-center">
                 <strong className="text-yellow-400">Rating:</strong>
                 <span className="text-white">{c.rating}</span>
               </div>
@@ -141,8 +122,9 @@ function AddCommentComponent() {
               </p>
             </li>
           ))}
+          {/* Static Comments */}
           <li className="p-4 bg-gray-800 rounded-lg shadow-md">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <strong className="text-yellow-400">Rating:</strong>
               <span className="text-white">5</span>
             </div>
@@ -151,7 +133,7 @@ function AddCommentComponent() {
             </p>
           </li>
           <li className="p-4 bg-gray-800 rounded-lg shadow-md">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <strong className="text-yellow-400">Rating:</strong>
               <span className="text-white">4</span>
             </div>
@@ -160,7 +142,7 @@ function AddCommentComponent() {
             </p>
           </li>
           <li className="p-4 bg-gray-800 rounded-lg shadow-md">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <strong className="text-yellow-400">Rating:</strong>
               <span className="text-white">3</span>
             </div>

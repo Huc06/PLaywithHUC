@@ -113,7 +113,7 @@ export function ProfileDetails({ profile }: ProfileDetailsProps) {
         />
         <button
           onClick={handleSendPayment}
-          className="p-2 bg-blue-500 text-white rounded"
+          className="p-2 bg-blue-500 text-white rounded flex justify-center items-center"
         >
           Send Payment
         </button>

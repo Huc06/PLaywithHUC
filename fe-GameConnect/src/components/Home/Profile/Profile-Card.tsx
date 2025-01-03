@@ -72,26 +72,23 @@ export default function ProfileCard(props: Profile) {
           </div>
         </Card>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-gradient-to-b from-gray-800 to-gray-900 border-none">
+      <DialogContent className="bg-gradient-to-b from-gray-800 to-gray-900 border-none w-fit max-w-[1500px] fixed">
         <DialogHeader>
           <DialogTitle className="text-white font-bangers">
             Profile & Chat
           </DialogTitle>
         </DialogHeader>
-        <Tabs defaultValue="profile" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-gray-200">
+        <Tabs defaultValue="profile">
+          <TabsList className="grid grid-cols-2 w-full bg-gray-200">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="chat">Chat</TabsTrigger>
-            <TabsTrigger value="comments">Comments</TabsTrigger>
           </TabsList>
-          <TabsContent value="profile">
+          <TabsContent value="profile" className="flex">
             <ProfileDetails profile={props} />
+            <AddCommentComponent />
           </TabsContent>
           <TabsContent value="chat">
             <Chat username={props.username} />
-          </TabsContent>
-          <TabsContent value="comments">
-            <AddCommentComponent/>
           </TabsContent>
         </Tabs>
       </DialogContent>

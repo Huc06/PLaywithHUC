@@ -25,20 +25,36 @@ export function Chat({ username }: ChatProps) {
     setMessages([...messages, newMessage]);
     setInputMessage("");
 
-    // Simulate a response from the streamer
-    setTimeout(() => {
-      const response: Message = {
-        id: (Date.now() + 1).toString(),
-        sender: username,
-        content: `Thanks for your message! I'll respond soon.`,
-        timestamp: new Date(),
-      };
-      setMessages((prevMessages) => [...prevMessages, response]);
-    }, 1000);
+    // Phản hồi tùy chỉnh
+    const generateResponse = (userMessage: string): string[] => {
+      if (userMessage.includes("Hello")) {
+        return ["Hi there! How can I assist you today?"];
+      } else if (
+        userMessage.includes("You can play game Zone Nine with me?💕")
+      ) {
+        return ["Alright, but don’t blame me if I’m too good!"];
+      } else if (userMessage.includes("ok")) {
+        return ["Alright, joining now!"];
+      }
+      return ["Thanks for your message!", "I'll respond soon."];
+    };
+
+    const responses = generateResponse(inputMessage).map((content, index) => ({
+      id: (Date.now() + index + 1).toString(),
+      sender: username,
+      content,
+      timestamp: new Date(),
+    }));
+
+    responses.forEach((response, index) => {
+      setTimeout(() => {
+        setMessages((prevMessages) => [...prevMessages, response]);
+      }, (index + 1) * 1000); // Delay mỗi tin nhắn thêm 1 giây
+    });
   };
 
   return (
-    <div className="flex flex-col h-full ">
+    <div className="flex flex-col h-full max-h-[500px] max-w-[500px]">
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
           <div
@@ -74,7 +90,7 @@ export function Chat({ username }: ChatProps) {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors"
+          className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors "
         >
           <Send className="w-5 h-5" />
         </button>
