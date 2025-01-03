@@ -100,7 +100,7 @@ const initialProfiles = [
     lastSeen: new Date(Date.now() - 3600000), // 1 hour ago
     rating: 5.0,
     hourlyRate: "28",
-    walletAddress: "0x1234567890abcdef1234567890abcdef12345678",
+    walletAddress: "0xB696e6E549d2b35Ee5a75F95bC306F9Fea550468",
   },
 ];
 
