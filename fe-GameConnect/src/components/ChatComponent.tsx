@@ -14,7 +14,7 @@ interface Message {
     _id: string;
     senderAddr: string;
     text: string;
-    username: string;
+    username?: string;
     timestamp: Date;
 }
 

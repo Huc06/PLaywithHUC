@@ -22,7 +22,7 @@ export const sendMessage = (data: {
     roomId: string;
     senderAddr: string;
     text: string;
-    username: string;
+    username?: string;
 }) => {
     if (socket) {
         socket.emit('chat message', data);
