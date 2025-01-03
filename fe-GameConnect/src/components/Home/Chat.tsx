@@ -30,7 +30,7 @@ export function Chat({ username }: ChatProps) {
       if (userMessage.includes("Hello")) {
         return ["Hi there! How can I assist you today?"];
       } else if (
-        userMessage.includes("You can play game Zone Nine with me?💕")
+        userMessage.includes("Can you play game Zone Nine with me?💕")
       ) {
         return ["Alright, but don’t blame me if I’m too good!"];
       } else if (userMessage.includes("ok")) {
