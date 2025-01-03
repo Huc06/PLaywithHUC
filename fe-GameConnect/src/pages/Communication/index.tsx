@@ -53,7 +53,7 @@ We're thrilled to share that Stellar Forger Alpha is coming soon! ☄️ Let’s
       comments: 0,
     },
     {
-      id: 1,
+      id: 3,
       author: {
         id: "2",
         name: `Zone Nine 🪓🧟
