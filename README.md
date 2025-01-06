@@ -20,8 +20,8 @@ The project contains two main folders:
 ## Requirements
 - **Node.js**: Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
 - **Yarn** (optional): Yarn is an alternative to npm that helps manage dependencies. If you prefer using Yarn, you can install it from [from yarnpkg.com.](https://yarnpkg.com/).
-- Bun (optional): Bun is a fast JavaScript runtime like Node.js, but with a focus on speed. If you prefer to use Bun, you can install it from [bun.sh]([https://bun.sh/]).
-- pnpm (optional): PNPM is an efficient alternative to npm and Yarn. To install PNPM, you can download it from [pnpm.io]([https://pnpm.io/])
+- **Bun** (optional): Bun is a fast JavaScript runtime like Node.js, but with a focus on speed. If you prefer to use Bun, you can install it from [bun.sh]([https://bun.sh/]).
+- **pnpm** (optional): PNPM is an efficient alternative to npm and Yarn. To install PNPM, you can download it from [pnpm.io]([https://pnpm.io/])
 
 ## Setup Instructions Frontend
 1. **Clone the Repository**: Clone the project repository to your local machine.
