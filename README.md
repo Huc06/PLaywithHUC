@@ -1,18 +1,48 @@
-# React + TypeScript + Vite
+# 🚀 **PlaywithHUC** 🚀<img alt="play" src="https://github.com/user-attachments/assets/b7ed8787-0f42-49de-8ad0-ffcd653c71c1" style="width: 50px; height: 50px; border: 2px solid #000; border-radius: 10px;">
+The project solves the problem of finding a reliable game companion, lack of a secure payment system, value communication and lack of community space. The platform connects players with creators, providing transparent payments and next-generation tools.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Folder Structure
 
-Currently, two official plugins are available:
+The project contains two main folders:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-## Getting Started
+**fe-GameConnect**
 
-First, run the development server:
+ - Contains the source code for the user interface.
+ - Built using Vite, TypeScript, and styled with TailwindCSS.
+ - Responsible for displaying the interface and interacting with the backend via API.
+   
+**server**
+
+ - Contains the server-side source code.
+ - Developed using Node.js.
+ - Provides APIs for the frontend and manages the database.
+
+## Requirements
+- **Node.js**: Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+- **Yarn** (optional): Yarn is an alternative to npm that helps manage dependencies. If you prefer using Yarn, you can install it from [from yarnpkg.com.](https://yarnpkg.com/).
+- Bun (optional): Bun is a fast JavaScript runtime like Node.js, but with a focus on speed. If you prefer to use Bun, you can install it from [bun.sh]([https://bun.sh/]).
+- pnpm (optional): PNPM is an efficient alternative to npm and Yarn. To install PNPM, you can download it from [pnpm.io]([https://pnpm.io/])
+
+## Setup Instructions Frontend
+1. **Clone the Repository**: Clone the project repository to your local machine.
 ```bash
-cd fe-gameConnect
+git clone https://github.com/Huc06/PLaywithHUC
 ```
-
+2. **Navigate to the project folder**
+```bash
+cd fe-GameConnect  
+```
+3. **Install Dependencies**: Use Bun to install the server dependencies.
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+4. **Run server**: To start the frontend development server, use one of the following
 ```bash
 npm run dev
 # or
@@ -22,49 +52,8 @@ pnpm dev
 # or
 bun dev
 ```
-
 Open [http://localhost:5173/](http://localhost:5173) with your browser to see the result.
 
 You can start editing the page by modifying `src/main.tsx`. The page auto-updates as you edit the file.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+To run the server, please refer to the README in the 'server' folder.
