@@ -57,3 +57,6 @@ Open [http://localhost:5173/](http://localhost:5173) with your browser to see th
 You can start editing the page by modifying `src/main.tsx`. The page auto-updates as you edit the file.
 
 To run the server, please refer to the README in the 'server' folder.
+
+##Video Demo
+ [PLaywithHUC](https://www.youtube.com/watch?v=EbZtwZk22vE)
